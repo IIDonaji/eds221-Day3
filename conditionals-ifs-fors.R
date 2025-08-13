@@ -139,3 +139,55 @@ for (i in seq_along(tree_height)) {
   val = tree_height[i] + tree_height[i + 1]
   print(val)
 }
+
+# For Look with conditional statemtns
+# create a vector of aniamls 
+animal <- c("cat", "dog", "dog", "zebra", "dog")
+one_animal <- animal[i]
+
+for (i in seq_along(animal)) {
+  if (animal[i] == "dog")
+    print(" I love dogs!")
+    else 
+    print("These are other animals")
+}
+
+# Another for loop example with conditional statements
+
+# animal species
+species <- c("dog", "elephant", "goat", "dog", "dog", "elephant")
+
+# and their respective ages in human years
+age_human <- c(3, 8, 4, 6, 12, 18)
+
+# convert ages to "animal years" using the following:
+# 1 human year = 7 in dog years
+# 1 human year = 0.88 in elephant years
+# 1 human year = 4.7 in goat years
+
+
+#i <- 1 # for testing
+#if (species[i] == "dog") {
+# animal_age <- age_human[i] * 7
+#} 
+#else if (species[i] == "elephant") {
+#  animal_age <- age_human[i] * 0.88
+#}
+# else if (species[i] == "goat") {
+#  animal_age <- age_human[i] * 4.7
+#}
+
+for (i in seq_along(species)) {
+  if (species[i] == "dog") 
+    animal_age <- age_human[i] * 7
+    else if (species[i] == "elephant") 
+    animal_age <- age_human[i] * 0.88
+    else if (species[i] == "goat") 
+    animal_age <- age_human[i] * 4.7
+
+  print(animal_age)
+}
+
+
+
+
