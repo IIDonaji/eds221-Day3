@@ -42,7 +42,7 @@ marmot <- 2.8
 
 if (marmot < 0.5) {
   print("Small")
-} else if (marmot >= 0.5 & marmot < 3) # defininf medium marmots
+} else if (marmot >= 0.5 & marmot < 3) # defining medium marmots
   print("medium")
    else
     print("large")
@@ -56,4 +56,86 @@ switch(Species,
        "mouse" = print("squeak")
        )
 
-# see next week dplyr::case_when()
+# see next week dplyr::case_when()!
+# Writing for loops
+
+dog_names <- c("Teddy", "Khora", "Banjo", "Waffle")
+
+print("My dog's name is Teddy")
+# create example for one data element to put into for loop
+# here is version with copy/pasting
+print(paste("My dog's name is", dog_names[1]))
+print(paste("My dog's name is", dog_names[2]))
+print(paste("My dog's name is", dog_names[3]))
+print(paste("My dog's name is", dog_names[4]))
+
+# verstion with a variable that I can update
+pupster <- dog_names[1] # dog_name[1] instead of 1
+print(paste("My dog's name is", dog_names[pupster]))
+
+# convert to a for loop
+
+for (pupster in dog_names) {
+  print(paste("My dog's name is", pupster))
+}
+
+# Another for loop example
+
+# data that I'm working with
+mass <- seq(from = 0, to = 3, by = 0.5)
+# practicing writing the body of the for loop
+i <- mass[1]
+i
+new_val <- i + 2 # adding 2 to each value
+print(new_val)
+
+for (i in mass) {
+  new_val <- i + 2 # adding 2 to each value
+  print(new_val)
+  
+}
+
+# practice same example with indexing
+i <-1
+new_val <- mass[i] + 2
+print(new_val)
+
+# writing into a for loop
+for (i in 1:length(mass)) { # defining iterator using the length of vector
+  new_val <- mass[i] + 2
+  print(new_val)
+}
+# same thing!
+for (i in seq_along(mass)) { #defining iterator seq_along()
+  new_val <- mass[i] + 2
+  print(new_val)
+}
+
+# another example with iterating by position ( indexing)
+
+tree_height <-c(1,2,6,10)
+
+# example for the first case simple case 
+tree_height[1] + tree_height[2] 
+
+# convert into a generalization expression
+i <- 1 # stored values for i 
+val <- tree_height[i] + tree_height[i + 1] # find the pattern 
+print(val)
+
+# convert
+# test out creating the sequence
+seq_along(tree_height)
+
+for (i in seq_along(tree_height)) {
+  val <- tree_height[i] + tree_height[i + 1] 
+  print(val)
+}
+
+# only need this code the above is the patht to get there
+tree_height <- c(1,2,6,10)
+
+for (i in seq_along(tree_height)) {
+  val = tree_height[i] + tree_height[i + 1]
+  print(val)
+}
