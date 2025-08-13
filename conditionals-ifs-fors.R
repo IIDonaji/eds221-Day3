@@ -177,6 +177,10 @@ age_human <- c(3, 8, 4, 6, 12, 18)
 #  animal_age <- age_human[i] * 4.7
 #}
 
+# allocate space for our out put
+
+animal_ages <- vector(mode = "numeric", length = length(species))
+
 for (i in seq_along(species)) {
   if (species[i] == "dog") 
     animal_age <- age_human[i] * 7
@@ -185,8 +189,45 @@ for (i in seq_along(species)) {
     else if (species[i] == "goat") 
     animal_age <- age_human[i] * 4.7
 
-  print(animal_age)
+  #print(animal_age)
+  animal_ages[i] <- animal_ages # populate empty vector
 }
+
+# another example of storing an output
+
+tigers <- c(29, 34, 82)
+lions <- c(2, 18, 6)
+
+big_cats <- vector(mode = "numeric", length = length(tigers))
+
+for (i in seq_along(tigers)) {
+  big_cats[i] <- tigers[i] + lions[i]
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
